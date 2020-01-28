@@ -1,0 +1,26 @@
+<camera device-position="back" flash="off" style="width: {{camWidth}}rpx; height:{{camHeight}}rpx;" hidden="{{!camToImg}}"></camera>
+
+ <canvas hidden="{{camToImg}}" canvas-id="canvasIn" class="canvas" style="width: {{camWidth}}rpx; height:{{camHeight}}rpx;">
+ <cover-view>
+ <button bindtap="remarksBtn" style="background :none;color: white;font-size:40rpx;width:{{camWidth}}rpx;margin-left:{{camWidth / 28}}rpx;text-align:left;margin-top:{{camHeight*2/3+camHeight/14+50}}rpx">{{remarks}}</button>
+ </cover-view>
+ </canvas>
+ <button>{{remarks}}</button>
+<view class="functionalArea">
+  <button class="editingArea" bindtap="takePhoto" wx:if="{{camToImg}}">拍照</button>
+  <view wx:else>
+    <view class="editingArea">
+      <button bindtap="reShoot">重拍</button>
+      <button bindtap="waterDirect">方向</button>
+      <button bindtap="savePhoto">保存</button>
+    </view>
+  <view >
+  <input style="background-color:red" focus="{{remarksIpt}}" bindinput="remarkIptValue" ></input>
+  </view>
+  </view>
+  
+  
+</view>
+
+
+

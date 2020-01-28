@@ -1,0 +1,15 @@
+
+
+.functionalArea{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  bottom: 20rpx;
+}
+
+.editingArea{
+  display: flex;
+  flex-direction: low;
+  justify-content: space-around;
+  
+}
