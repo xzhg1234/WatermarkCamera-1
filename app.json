@@ -1,16 +1,9 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/watermark/watermark"
+    "pages/modify/modify",
+    "pages/album/album",
+    "pages/cropper/cropper-example"
   ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black",
-    "backgroundColor": "#000",
-    "backgroundTextStyle": "light"
-  },
-  "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

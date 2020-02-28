@@ -1,15 +1,115 @@
-
-
-.functionalArea{
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  bottom: 20rpx;
+page {
+  background-color: black;
 }
 
-.editingArea{
+.watermarksTop{
   display: flex;
   flex-direction: low;
-  justify-content: space-around;
+  justify-content: space-between;
   
+  background-color:black;
+  align-items: center;
+  padding-left: 40rpx;
+  padding-right: 40rpx;
+}
+
+.camFlashBtn{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.saveBtn{
+  height: 55rpx;
+  width: 55rpx;
+}
+
+.waterDirectionBtn{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.camOrientationBtn{
+  height: 40rpx;
+  width: 40rpx;
+}
+
+.myTimeDateRemarksAddress{
+  color: white;
+  display:flex;
+  flex-direction: column;
+  padding-left: 30rpx;
+  align-items: flex-start;
+}
+
+.myTimeBtn{
+  font-size: 90rpx;
+}
+
+.myDateBtn{
+  font-size: 30rpx;
+}
+
+.myRemarksBtn{
+  font-size: 30rpx;
+  margin-top: 10rpx;
+}
+
+.myAddress{
+  display: flex;
+  flex-direction: low;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: 10rpx;
+}
+
+.myAddressBtn{
+  font-size: 30rpx;
+}
+
+
+.watermarksBottom{
+  display: flex;
+  flex-direction: low;
+  justify-content: space-between;
+  align-items: center;
+  background-color:black;
+  padding-left: 60rpx;
+  padding-right: 60rpx;
+}
+
+/* .albumBtn{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25rpx;
+} */
+.album{
+  height: 50rpx;
+  width: 50rpx;
+}
+
+.takePhoto{
+  height: 100rpx;
+  width: 100rpx;
+}
+
+/* .watermarksBtn{
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25rpx;
+}
+.watermarks{
+  height: 50rpx;
+  width: 50rpx;
+} */
+
+.tailoring{
+  height: 50rpx;
+  width: 50rpx;
 }

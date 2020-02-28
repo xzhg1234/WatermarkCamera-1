@@ -1,0 +1,28 @@
+page {
+  background-color: black;
+}
+
+.iptView{
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+  margin-left: 30rpx;
+  background-color: black;
+  color: white;
+}
+
+.ipt{
+  text-align: left;
+  border: 1rpx solid;
+  width: 670rpx;
+  border-radius: 20rpx;
+  height: 80rpx;
+  margin-top: 30rpx;
+  padding-left: 30rpx;
+  color: white;
+}
+
+.btn{
+  background: none;
+  color: white;
+}

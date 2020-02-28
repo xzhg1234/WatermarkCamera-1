@@ -1,26 +1,62 @@
-<camera device-position="back" flash="off" style="width: {{camWidth}}rpx; height:{{camHeight}}rpx;" hidden="{{!camToImg}}"></camera>
-
- <canvas hidden="{{camToImg}}" canvas-id="canvasIn" class="canvas" style="width: {{camWidth}}rpx; height:{{camHeight}}rpx;">
- <cover-view>
- <button bindtap="remarksBtn" style="background :none;color: white;font-size:40rpx;width:{{camWidth}}rpx;margin-left:{{camWidth / 28}}rpx;text-align:left;margin-top:{{camHeight*2/3+camHeight/14+50}}rpx">{{remarks}}</button>
- </cover-view>
- </canvas>
- <button>{{remarks}}</button>
-<view class="functionalArea">
-  <button class="editingArea" bindtap="takePhoto" wx:if="{{camToImg}}">拍照</button>
-  <view wx:else>
-    <view class="editingArea">
-      <button bindtap="reShoot">重拍</button>
-      <button bindtap="waterDirect">方向</button>
-      <button bindtap="savePhoto">保存</button>
-    </view>
-  <view >
-  <input style="background-color:red" focus="{{remarksIpt}}" bindinput="remarkIptValue" ></input>
-  </view>
-  </view>
-  
-  
+ <view class="watermarksTop" style="height:{{(windowHeight-windowWidth*4/3)/3}}px">
+  <image class="camFlashBtn" src='{{camFlash==true?"/images/闪电.png":"/images/关闭闪电.png"}}' bindtap="camFlashBtn"></image>
+  <image class="saveBtn" src='{{disSave==true?"/images/不能下载.png":"/images/下载.png"}}' bindtap="saveBtn" hidden="{{disSave}}"></image>
+  <image class="waterDirectionBtn" src='{{disDirection==true?"/images/不能水印方向.png":"/images/水印方向.png"}}' bindtap="waterDirectionBtn"></image>
+  <image class="camOrientationBtn" src="/images/转换.png" bindtap="camOrientationBtn"></image>
 </view>
 
+  <camera style="width: 750rpx; height:1000rpx;" resolution="high" flash='{{camFlash==true?"on":"off"}}' device-position='{{camOrientation==true?"back":"front"}}' hidden="{{!camView}}">
+  <cover-view wx:if="{{waterDirect}}" class="myTimeDateRemarksAddress" style="margin-top:{{windowWidth}}px;height:{{windowWidth/3}}px" bindtap="modify">
+    <cover-view class="myTimeBtn">{{myTime}}</cover-view>
+    <cover-view class="myDateBtn">{{myDate}}</cover-view>
+    <cover-view class="myRemarksBtn">{{myRemarks}}</cover-view>
+    <cover-view class="myAddress">
+      <cover-image style="height: 30rpx;width: 30rpx;" src="/images/位置标记.png"></cover-image>
+      <cover-view class="myAddressBtn">{{myAddress}}</cover-view>
+    </cover-view>
+  </cover-view>
+
+  <cover-view wx:else class="myTimeDateRemarksAddress" style="transform-origin:33.3333333% 0%;transform: rotate(90deg);margin-top:{{windowWidth/3}}px;height:{{windowWidth/3}}px" bindtap="modify">
+    <cover-view class="myTimeBtn">{{myTime}}</cover-view>
+    <cover-view class="myDateBtn">{{myDate}}</cover-view>
+    <cover-view class="myRemarksBtn">{{myRemarks}}</cover-view>
+    <cover-view class="myAddress">
+      <cover-image style="height: 30rpx;width: 30rpx;" src="/images/位置标记.png"></cover-image>
+      <cover-view class="myAddressBtn">{{myAddress}}</cover-view>
+    </cover-view>
+  </cover-view>
+</camera>
+
+<canvas canvas-id="myCanvas" style="width: {{windowWidth}}px; height:{{windowWidth*4/3}}px;" hidden="{{camView}}">
+ <!-- style="width: {{windowWidth}}px; height:{{windowWidth*4/3}}px;" -->
+<!-- style='{{camView==true?"width: 0px; height:0px;":"width: {{windowWidth}}px; height:{{windowWidth*4/3}}px;"}}'  -->
+  <cover-view wx:if="{{waterDirect}}" class="myTimeDateRemarksAddress" style="margin-top:{{windowWidth}}px;height:{{windowWidth/3}}px" bindtap="modify" hidden="{{myTimeDateRemarksAddress}}">
+    <cover-view class="myTimeBtn">{{myTime}}</cover-view>
+    <cover-view class="myDateBtn">{{myDate}}</cover-view>
+    <cover-view class="myRemarksBtn">{{myRemarks}}</cover-view>
+    <cover-view class="myAddress">
+      <cover-image style="height: 30rpx;width: 30rpx;" src="/images/位置标记.png"></cover-image>
+      <cover-view class="myAddressBtn">{{myAddress}}</cover-view>
+    </cover-view>
+  </cover-view>
+
+  <cover-view wx:else class="myTimeDateRemarksAddress" style="transform-origin:33.3333333% 0%;transform: rotate(90deg);margin-top:{{windowWidth/3}}px;height:{{windowWidth/3}}px" bindtap="modify" hidden="{{myTimeDateRemarksAddress}}">
+    <cover-view class="myTimeBtn">{{myTime}}</cover-view>
+    <cover-view class="myDateBtn">{{myDate}}</cover-view>
+    <cover-view class="myRemarksBtn">{{myRemarks}}</cover-view>
+    <cover-view class="myAddress">
+      <cover-image style="height: 30rpx;width: 30rpx;" src="/images/位置标记.png"></cover-image>
+      <cover-view class="myAddressBtn">{{myAddress}}</cover-view>
+    </cover-view>
+  </cover-view>
+</canvas>
+
+<view >
+<view class="watermarksBottom" style="height:{{(windowHeight-windowWidth*4/3)*2/3}}px;">
+    <image class="album" src="/images/相册.png" bindtap="album"></image>
+  <image class="takePhoto" src='{{takephoto==true?"/images/拍照.png":"/images/重拍摄.png"}}' bindtap='{{takephoto==true?"takePhoto":"reTakePhoto"}}'></image>
+  <image class="tailoring" src="/images/裁剪.png" bindtap="tailoringBtn"></image>
+</view>
+</view>
 
 

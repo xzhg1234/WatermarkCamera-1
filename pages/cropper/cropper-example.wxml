@@ -1,0 +1,16 @@
+<!--pages/cropper/cropper-sample.wxml-->
+<view class='body'>
+  <cropper wx:if="{{cropperOrImg}}" id='cropper' class='stage'></cropper>
+  
+  <view wx:else class="imgView" style="height: {{windowHeight*17/18}}px;">
+    <image src='{{urls}}' mode="aspectFit"></image>
+  </view>
+  
+  
+  <view class='bar' style="height: {{windowHeight/18}}px;">
+    <view class='btn btn-cancel ripple' style="line-height: {{windowHeight/18}}px;" bindtap='fnCancel'>取消</view>
+    <view class='btn btn-submit ripple' style="line-height: {{windowHeight/18}}px;" bindtap='fnSubmit' wx:if="{{yesOrSave}}">确定</view>
+    <view class='btn btn-submit ripple' style="line-height: {{windowHeight/18}}px;" bindtap='fnSave' wx:else>保存</view>
+  </view>
+
+</view>

@@ -1,0 +1,8 @@
+<view class="iptView">
+<text>请在下方输入您的自定义水印内容</text>
+<input class="ipt" placeholder="{{myTime}}" value="{{timeValue}}" bindconfirm="successTo" bindinput="timeValue" focus="true"></input>
+<input class="ipt" placeholder="{{myDate}}" value="{{dateValue}}" bindconfirm="successTo" bindinput="dateValue" focus="true"></input>
+<input class="ipt" placeholder="{{myRemarks}}" value="{{remarksValue}}" bindconfirm="successTo" bindinput="remarksValue" focus="true"></input>
+<input class="ipt" placeholder="{{myAddress}}" value="{{addressValue}}" bindconfirm="successTo" bindinput="addressValue" focus="true"></input>
+<button class="btn" bindtap="yesTo">确定</button>
+</view>

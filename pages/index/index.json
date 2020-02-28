@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarBackgroundColor": "#000000",
+  "navigationBarTextStyle":"white",
+  "navigationBarTitleText":"全能相机",
+  "disableScroll":true
 }
